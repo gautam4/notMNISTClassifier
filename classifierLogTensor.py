@@ -40,12 +40,6 @@ print(train_labels)
 
 train_subset = 10000
 
-
-#print(train_labels.shape)
-
-#print(train_dataset[1])
-#print(train_dataset[1].shape)
-
 #input values for Classifier 
 
 def input_fn(train_dataset, train_labels):
