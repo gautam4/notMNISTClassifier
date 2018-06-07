@@ -7,11 +7,11 @@ notMNISTdataCollector.py
 - The training, validation, and test dataset are stored in a pickle file for later use. 
 
 classifierLogScikit.py
- -A logistic classifier implemented using the Sci-kit learn library
+ - A logistic classifier implemented using the Sci-kit learn library
 
 classifierCNN.py
 - A convolutional neural network implemented using TensorFlow's Graph API
 
 classifierLogTensor.py
--A neural network classifier implemented using TensorFlow's Estimator API
+- A neural network classifier implemented using TensorFlow's Estimator API
 
