@@ -76,7 +76,6 @@ with graph.as_default():
 
 	#Model is defined
 	def model(data):
-		#Problem 2: Alter the conv2d into a max pool
 		conv = tf.nn.conv2d(data, layer1_weights, [1,2,2,1] , padding = 'SAME')
 		max_pool = tf.nn.max_pool(conv,[1,2,2,1], [1,2,2,1], padding = 'SAME')
 		hidden = tf.nn.relu(conv + layer1_biases)
@@ -86,13 +85,10 @@ with graph.as_default():
 		shape = hidden.get_shape().as_list()
 		reshape = tf.reshape(hidden, [shape[0], shape[1] *shape[2]*shape[3]])
 		hidden = tf.nn.relu(tf.matmul(reshape,layer3_weights)+layer3_biases)
-		#Note: What is tf.matmul? What does it do?
-		#Note: How does the same name not cause and overwrite
 		return tf.matmul(hidden,layer4_weights) +layer4_biases
 
 	
-	logits = model(tf_train_dataset)
-	#Note: What is a logit? 
+	logits = model(tf_train_dataset) 
 	loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels = tf_train_labels, logits = logits))
 
 	optimizer = tf.train.GradientDescentOptimizer(0.05).minimize(loss)

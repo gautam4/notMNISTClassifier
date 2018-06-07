@@ -39,9 +39,7 @@ print('Test Set', test_dataset.shape, test_labels.shape )
 print(train_labels)
 
 train_subset = 10000
-#6.3.18 @3:31 AM
-# At train subset of 100, all steps are successful. 
-#Longer runtime at full size is due to slower processing. 
+
 
 #print(train_labels.shape)
 
